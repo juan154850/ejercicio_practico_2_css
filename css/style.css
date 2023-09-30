@@ -2,7 +2,7 @@ body,
 header,
 section,
 footer {
-    border: 1px solid black;
+    border: none;
     padding: 2px;
     display: grid;
     grid-template-columns: 1fr;
@@ -53,17 +53,28 @@ a:hover {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 15px;
     justify-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    overflow-x: auto;
 }
 
 .image {
     position: relative;
     margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .overlay {
@@ -73,7 +84,6 @@ a:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Sombra de fondo */
     display: none;
     justify-content: center;
     align-items: center;
@@ -85,7 +95,7 @@ a:hover {
 }
 
 .image:hover .overlay {
-    display: grid;
+    display: flex;
     cursor: pointer;
 }
 
